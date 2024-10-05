@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <!-- Primera columna para las imágenes -->
+      <ion-col size="4">
+        <ion-img src="assets/icon/post.png" style="width: 118px; height: 114px;"></ion-img>
+        <ion-img src="assets/icon/upavmg.png" style="width: 94px; height: 62px; margin: 10px 0;" class="t"></ion-img>
+      </ion-col>
+
+      <!-- Segunda columna para los textos -->
+      <ion-col size="8">
+        <ion-text color="primary" style="font-size: 25px; font-weight: bold;">
+          PERFIL ALUMNO
+        </ion-text>
+        <ion-text color="medium" style="font-size: 20px; font-weight: bold; display: block; margin: 5px 0;">
+          Nombre_Alumno
+        </ion-text>
+        <ion-text color="medium" style="font-size: 20px; font-weight: bold; display: block; margin: 5px 0;">
+          Grado y Grupo: 1"A"
+        </ion-text>
+        <ion-text color="medium" style="font-size: 20px; font-weight: bold; display: block; margin: 5px 0;">
+          Carrera
+        </ion-text>
+        <ion-text color="medium" style="font-size: 20px; font-weight: bold; display: block; margin: 5px 0;">
+          Semestre: 1
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Fila 1 -->
+    <ion-row>
+      <!-- Columna 1, Imagen 1 -->
+      <ion-col size="6">
+        <div class="image-container">
+          <h3 class="image-title">Imagen 1</h3>
+          <img src="assets/icon/cal.png" alt="Imagen 1" class="image-grid">
+        </div>
+      </ion-col>
+
+      <!-- Columna 2, Imagen 2 -->
+      <ion-col size="6">
+        <div class="image-container">
+          <h3 class="image-title">Imagen 2</h3>
+          <img src="assets/icon/calendario.png" alt="Imagen 2" class="image-grid">
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <br>
+    <!-- Fila 2 -->
+    <ion-row>
+      <!-- Columna 3, Imagen 3 -->
+      <ion-col size="6">
+        <div class="image-container">
+          <h3 class="image-title">Imagen 3</h3>
+          <img src="assets/icon/portapapeles.png" alt="Imagen 3" class="image-grid">
+        </div>
+      </ion-col>
+
+      <!-- Columna 4, Imagen 4 -->
+      <ion-col size="6">
+        <div class="image-container">
+          <h3 class="image-title">Imagen 4</h3>
+          <img src="assets/icon/escritura.png" alt="Imagen 4" class="image-grid">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="inicio" routerLink="../inicio">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="rutinas" routerLink="../tareas">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <ion-label>Tareas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="cuenta" routerLink="../cuenta">
+      <ion-icon name="school-outline"></ion-icon>
+      <ion-label>Cuenta</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="ayuda" routerLink="../ayuda">
+      <ion-icon name="help-circle-outline"></ion-icon>
+      <ion-label>Ayuda</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

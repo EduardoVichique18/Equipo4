@@ -1,0 +1,39 @@
+.image-container {
+    text-align: center;
+    width: 135px;
+    height: 135px;
+
+}
+
+.image-title {
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+.image-grid {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: solid;
+    margin: 20px;
+}
+
+.nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-button-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+ion-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0000ff;
+    /* Cambiar el color a azul */
+}

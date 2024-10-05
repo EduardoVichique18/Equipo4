@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>AYUDA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text>
+    <h2>¿Tu duda no aparece? Envíanosla para responderte</h2>
+  </ion-text>
+
+  <ion-button expand="block" color="success">
+    ENVIAR DUDA
+  </ion-button>
+
+  <ion-item>
+    <ion-text>
+      <h3>¿Cómo puedo registrarme en el campus?</h3>
+      <p>
+        Para registrarte en como aspirante, debes dirigirte a la página principal
+        y hacer clic en el botón de 'Registro'. Llena todos los campos requeridos
+        y confirma tu correo electrónico.
+      </p>
+    </ion-text>
+  </ion-item>
+
+  <ion-item>
+    <ion-text>
+      <h3>¿Qué debo hacer si olvido mi contraseña?</h3>
+      <p>
+        Si olvidas tu contraseña, puedes usar la opción de 'Olvidé mi contraseña'
+        en la página de inicio de sesión. Sigue las instrucciones para restablecer
+        tu contraseña.
+      </p>
+    </ion-text>
+  </ion-item>
+
+  <ion-item>
+    <ion-text>
+      <h3>¿Cómo puedo contactar con soporte técnico?</h3>
+      <p>
+        "Puedes contactar con soporte técnico a través del correo electrónico 
+        llamando al número 271-700-7637."
+      </p>
+    </ion-text>
+  </ion-item>
+
+  
+</ion-content>
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="inicio" routerLink="../inicio">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="rutinas" routerLink="../tareas">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <ion-label>Tareas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="cuenta" routerLink="../cuenta">
+      <ion-icon name="school-outline"></ion-icon>
+      <ion-label>Cuenta</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="ayuda" routerLink="../ayuda">
+      <ion-icon name="help-circle-outline"></ion-icon>
+      <ion-label>Ayuda</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

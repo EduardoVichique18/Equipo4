@@ -1,0 +1,156 @@
+<ion-content>
+  <ion-grid>
+    <form [ngFormOptions]="formulario" (ngSubmit)="onSubmit()">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto">
+
+          <ion-img src="assets/icon/upav_img1.JPG" class="app-image"></ion-img>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+
+          <ion-text class="datos-generales">
+            <h2>Datos generales</h2>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="stacked">Nacionalidad</ion-label>
+            <ion-select>
+              <ion-select-option value="mexico">Mexicana</ion-select-option>
+              <ion-select-option value="extranjera">Extranjera</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="stacked">Estado civil</ion-label>
+            <ion-select>
+              <ion-select-option value="soltero">Soltero</ion-select-option>
+              <ion-select-option value="casado">Casado</ion-select-option>
+              <ion-select-option value="otro">Otro</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Colonia</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Municipio</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Tel. celular</ion-label>
+            <ion-input type="text" maxlength="10" minlength="10"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">País de origen</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Ocupación</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Código postal</ion-label>
+            <ion-input type="text" maxlength="5" minlength="5"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Localidad</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Estado de origen</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Dirección</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Tel. casa</ion-label>
+            <ion-input type="text" maxlength="10" minlength="10"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Botones -->
+      <ion-row class="ion-margin-top">
+        <ion-col size="6">
+          <ion-button expand="block" color="primary" routerLink="../info-personal">Volver</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" color="primary" routerLink="../carrera">Siguiente</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

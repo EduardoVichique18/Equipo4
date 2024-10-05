@@ -1,0 +1,57 @@
+!<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <!-- Imagen de la app -->
+        <ion-img src="assets/icon/upav_img1.JPG" class="app-image"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <!-- Nombre del alumno -->
+        <ion-text class="nombre-alumno">
+          <h2>Nombre del alumno</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <!-- Campos para nombre -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Apellido paterno</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Apellido materno</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Nombre(s)</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Botones -->
+    <ion-row class="ion-margin-top">
+      <ion-col size="6">
+        <ion-button expand="block" color="primary" routerLink="../principal">Volver</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button routerLink="/info-personal" expand="block" color="primary">Siguiente</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
