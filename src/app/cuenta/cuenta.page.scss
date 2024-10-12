@@ -37,3 +37,20 @@ ion-label {
     color: #0000ff;
     /* Cambiar el color a azul */
 }
+
+
+.logout-row {
+    justify-content: center;
+    margin-top: 55px;
+    /* Ajusta este valor según lo que necesites */
+}
+
+.logout-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CSBTN {
+    text-align: center;
+}

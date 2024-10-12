@@ -1,3 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Regresar"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/datos-generales">Siguiente </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      Información personal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
 <ion-content>
   <ion-list>
     <ion-row class="ion-justify-content-center">
@@ -7,14 +25,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
-      <ion-col size="12">
-        <!-- Información personal -->
-        <ion-text class="informacion-personal">
-          <h2>Información personal</h2>
-        </ion-text>
-      </ion-col>
-    </ion-row>
+
 
     <!-- Campos para información personal -->
     <ion-row>
@@ -38,6 +49,7 @@
                 [doneText]="'Aceptar'" presentation="date"></ion-datetime>
             </ng-template>
           </ion-popover>
+
         </ion-item>
       </ion-col>
     </ion-row>
@@ -91,14 +103,6 @@
       </ion-col>
     </ion-row>
 
-    <!-- Botones -->
-    <ion-row class="ion-margin-top">
-      <ion-col size="6">
-        <ion-button routerLink="/registro" expand="block" color="primary">Volver</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button expand="block" color="primary" routerLink="/datos-generales">Siguiente</ion-button>
-      </ion-col>
-    </ion-row>
+
   </ion-list>
 </ion-content>

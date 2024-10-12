@@ -28,10 +28,7 @@ const routes: Routes = [
     path: 'ayuda',
     loadChildren: () => import('./ayuda/ayuda.module').then(m => m.AyudaPageModule)
   },
-  {
-    path: 'principal',
-    loadChildren: () => import('./principal/principal.module').then(m => m.PrincipalPageModule)
-  },
+
   {
     path: 'tareas',
     loadChildren: () => import('./tareas/tareas.module').then(m => m.TareasPageModule)
@@ -50,7 +47,11 @@ const routes: Routes = [
   },
   {
     path: 'api',
-    loadChildren: () => import('./api/api.module').then( m => m.ApiPageModule)
+    loadChildren: () => import('./api/api.module').then(m => m.ApiPageModule)
+  },
+  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
 ];
 

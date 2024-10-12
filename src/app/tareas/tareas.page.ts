@@ -1,49 +1,31 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';  // Asegúrate de que la ruta sea correcta
 
 @Component({
   selector: 'app-tareas',
   templateUrl: './tareas.page.html',
   styleUrls: ['./tareas.page.scss'],
 })
-export class TareasPage {  // Make sure this is exported with export keyword
-  tituloTarea: string = '';
-  nombreMateria: string = '';
-  fechaEntrega: string | null = null;
+export class TareasPage {
+  listaTareas: Array<{ titulo: string, materia: string, fecha: string }> = [];
 
-  constructor(private alertController: AlertController) {}
+  constructor(
+    private alertController: AlertController,
+    private modalController: ModalController
+  ) { }
 
-  seleccionarFecha() {
-    const date = new Date().toISOString().split('T')[0];
-    this.fechaEntrega = date;
-  }
-
-  async agregarTarea() {
-    if (!this.tituloTarea || !this.nombreMateria || !this.fechaEntrega) {
-      const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Por favor, complete todos los campos.',
-        buttons: ['OK']
-      });
-      await alert.present();
-      return;
-    }
-
-    console.log('Tarea agregada:', {
-      titulo: this.tituloTarea,
-      materia: this.nombreMateria,
-      fecha: this.fechaEntrega,
+  async abrirModal() {
+    const modal = await this.modalController.create({
+      component: ModalPage, // Llamamos al modal
     });
 
-    const successAlert = await this.alertController.create({
-      header: 'Éxito',
-      message: 'Tarea agregada correctamente.',
-      buttons: ['OK']
+    modal.onDidDismiss().then((result) => {
+      if (result.data) {
+        this.listaTareas.push(result.data);
+      }
     });
-    await successAlert.present();
 
-    this.tituloTarea = '';
-    this.nombreMateria = '';
-    this.fechaEntrega = null;
+    return await modal.present();
   }
 }

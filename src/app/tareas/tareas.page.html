@@ -5,26 +5,21 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <form (ngSubmit)="agregarTarea()">
-    <ion-item>
-      <ion-label position="floating">Título de la tarea</ion-label>
-      <ion-input [(ngModel)]="tituloTarea" name="tituloTarea" required></ion-input>
+  <ion-list>
+    <ion-item *ngFor="let tarea of listaTareas">
+      <ion-label>
+        <h2>{{ tarea.titulo }}</h2>
+        <p>{{ tarea.materia }} - {{ tarea.fecha }}</p>
+      </ion-label>
     </ion-item>
+  </ion-list>
 
-    <ion-item>
-      <ion-label position="floating">Nombre de la materia</ion-label>
-      <ion-input [(ngModel)]="nombreMateria" name="nombreMateria" required></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Fecha de Entrega</ion-label>
-      <ion-datetime [(ngModel)]="fechaEntrega" name="fechaEntrega" displayFormat="DD/MM/YYYY"
-        placeholder="Seleccione fecha">
-      </ion-datetime>
-    </ion-item>
-
-    <ion-button expand="block" color="success" type="submit">Agregar Tarea</ion-button>
-  </form>
+  <!-- Botón flotante "+" -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="abrirModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
 
 <ion-footer>

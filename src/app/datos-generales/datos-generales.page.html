@@ -1,3 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="Regresar"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/carrera">Siguiente </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      Datos generales
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
 <ion-content>
   <ion-grid>
     <form [ngFormOptions]="formulario" (ngSubmit)="onSubmit()">
@@ -11,9 +29,7 @@
       <ion-row>
         <ion-col size="12">
 
-          <ion-text class="datos-generales">
-            <h2>Datos generales</h2>
-          </ion-text>
+
         </ion-col>
       </ion-row>
 
@@ -142,15 +158,7 @@
         </ion-col>
       </ion-row>
 
-      <!-- Botones -->
-      <ion-row class="ion-margin-top">
-        <ion-col size="6">
-          <ion-button expand="block" color="primary" routerLink="../info-personal">Volver</ion-button>
-        </ion-col>
-        <ion-col size="6">
-          <ion-button expand="block" color="primary" routerLink="../carrera">Siguiente</ion-button>
-        </ion-col>
-      </ion-row>
+
     </form>
   </ion-grid>
 </ion-content>
