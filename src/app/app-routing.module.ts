@@ -53,6 +53,10 @@ const routes: Routes = [
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
+  {
+    path: 'horario',
+    loadChildren: () => import('./horario/horario.module').then( m => m.HorarioPageModule)
+  },
 ];
 
 @NgModule({

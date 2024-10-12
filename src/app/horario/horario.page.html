@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Horario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [style.background-color]="'#E3F2FD'">
+
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h2>Matemáticas</h2>
+      </ion-label>
+      <ion-note slot="end" color="primary">8:00am - 9:00am</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Física</h2>
+      </ion-label>
+      <ion-note slot="end" color="primary">9:00am - 10:00am</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Química</h2>
+      </ion-label>
+      <ion-note slot="end" color="primary">10:00am - 11:00am</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Historia</h2>
+      </ion-label>
+      <ion-note slot="end" color="primary">11:00am - 12:00pm</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Literatura</h2>
+      </ion-label>
+      <ion-note slot="end" color="primary">12:00pm - 1:00pm</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>Educación Física</h2>
+      </ion-label>
+      <ion-note slot="end" color="primary">1:00pm - 2:00pm</ion-note>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-footer>
+    <ion-button expand="full" color="primary" (click)="downloadPDF()">
+      Descargar
+    </ion-button>
+  </ion-footer>
+
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="inicio" routerLink="../inicio">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="rutinas" routerLink="../tareas">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <ion-label>Tareas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="cuenta" routerLink="../cuenta">
+      <ion-icon name="school-outline"></ion-icon>
+      <ion-label>Cuenta</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="horario" routerLink="../horario">
+      <ion-icon name="help-circle-outline"></ion-icon>
+      <ion-label>Horario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
