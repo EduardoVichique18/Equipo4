@@ -1,11 +1,4 @@
-.image-container {
-    text-align: center;
-    width: 135px;
-    height: 135px;
-
-}
-
-.image-title {
+image-title {
     margin-bottom: -10px;
     text-align: center;
 }
@@ -17,6 +10,13 @@
     border: solid;
     margin: 20px;
 }
+h3{
+    margin-right: 50px; /* adjust the value to your liking */
+  }
+  .p{
+    margin-right: 50px;
+
+  }
 
 .nav-button {
     display: flex;
@@ -39,18 +39,20 @@ ion-label {
 }
 
 
+
 .logout-row {
-    justify-content: center;
-    margin-top: 55px;
-    /* Ajusta este valor según lo que necesites */
-}
-
-.logout-col {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: center; /* Centra horizontalmente el contenido */
+  }
+  
+  .logout-col {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.CSBTN {
-    text-align: center;
-}
+    justify-content: center; /* Asegura que el botón esté centrado dentro de la columna */
+  }
+  
+  .CSBTN {
+    margin-bottom: 20px; /* Espaciado opcional desde el borde inferior */
+  }
+  

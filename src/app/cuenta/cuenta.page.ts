@@ -5,11 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cuenta.page.html',
   styleUrls: ['./cuenta.page.scss'],
 })
-export class CuentaPage implements OnInit {
+export class CuentaPage  {
 
   constructor() { }
 
-  ngOnInit() {
+  showMaterias = false; // Inicialmente oculto
+
+  toggleMaterias() {
+    this.showMaterias = !this.showMaterias;
   }
 
 }

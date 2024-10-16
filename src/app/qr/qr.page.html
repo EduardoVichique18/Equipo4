@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Codigo QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <h1 class="qrtxt">Mi codigo de entrada.</h1>
+    </ion-col>
+  </ion-row>
+    
+  
+  <ion-row>
+    <ion-col>
+    <img src="https://investigayeduca.com/codigos-qr-los-contenidos-escolares/" alt="qr">
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+<ion-fab class="codeqr" vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button click="#">
+    <ion-icon name="qr-code-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>
+
+
+
+<ion-footer>
+
+  <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="inicio" routerLink="../inicio">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="rutinas" routerLink="../tareas">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        <ion-label>Tareas</ion-label>
+      </ion-tab-button>
+   
+
+    <ion-tab-button class="codeqr" tab="qr" routerLink="../qr" disabled>
+      <ion-icon name=""></ion-icon>
+    </ion-tab-button>
+    
+
+    <ion-tab-button tab="cuenta" routerLink="../cuenta">
+      <ion-icon name="school-outline"></ion-icon>
+      <ion-label>Cuenta</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="horario" routerLink="../horario">
+      <ion-icon name="help-circle-outline"></ion-icon>
+      <ion-label>Horario</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

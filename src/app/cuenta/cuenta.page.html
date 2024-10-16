@@ -30,57 +30,67 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <!-- Fila 1 -->
-    <ion-row>
-      <!-- Columna 1, Imagen 1 -->
-      <ion-col size="6">
-        <div class="image-container">
-          <h3 class="image-title">Imagen 1</h3>
-          <img src="assets/icon/cal.png" alt="Imagen 1" class="image-grid">
-        </div>
-      </ion-col>
 
-      <!-- Columna 2, Imagen 2 -->
-      <ion-col size="6">
-        <div class="image-container">
-          <h3 class="image-title">Imagen 2</h3>
-          <img src="assets/icon/calendario.png" alt="Imagen 2" class="image-grid">
-        </div>
-      </ion-col>
-    </ion-row>
 
+  <ion-col size="6">
+    <div class="image-container">
+      <ion-button class="image-title" (click)="toggleMaterias()">Calificaciones</ion-button>
+    </div>
+  </ion-col>
+  
+  <!-- Materias se mostrarán solo cuando showMaterias sea true -->
+  <ion-item *ngIf="showMaterias">
+    <h3 class="p">Materias</h3>
+    <h3>P1</h3>
     <br>
-    <!-- Fila 2 -->
-    <ion-row>
-      <!-- Columna 3, Imagen 3 -->
-      <ion-col size="6">
-        <div class="image-container">
-          <h3 class="image-title">Imagen 3</h3>
-          <img src="assets/icon/portapapeles.png" alt="Imagen 3" class="image-grid">
-        </div>
-      </ion-col>
+    <h3>P2</h3>
+    <h3>F</h3>
+  </ion-item>
+  <br>
+  <ion-item *ngIf="showMaterias">
+    <h3>Materia 1</h3>
+    <h3>0.0</h3>
+    <br>
+    <h3>0.0</h3>
+    <h3>0.0</h3>
+  </ion-item>
+  <br>
+  <!-- Repite lo mismo para los demás ion-items -->
+  <ion-item *ngIf="showMaterias">
+    <h3>Materia 3</h3>
+    <h3>0.0</h3>
+    <br>
+    <h3>0.0</h3>
+    <h3>0.0</h3>
+  </ion-item>
+  <br>
+  <!-- Sigue añadiendo el *ngIf en los demás ion-items -->
+  <ion-item *ngIf="showMaterias">
+    <h3>Materia 4</h3>
+    <h3>0.0</h3>
+    <br>
+    <h3>0.0</h3>
+    <h3>0.0</h3>
+  </ion-item>
+  <br>
+  <ion-item *ngIf="showMaterias">
+    <h3>Materia 5</h3>
+    <h3>0.0</h3>
+    <br>
+    <h3>0.0</h3>
+    <h3>0.0</h3>
+  </ion-item>
+  <br>
 
-      <!-- Columna 4, Imagen 4 -->
-      <ion-col size="6">
-        <div class="image-container">
-          <h3 class="image-title">Imagen 4</h3>
-          <img src="assets/icon/escritura.png" alt="Imagen 4" class="image-grid">
-        </div>
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="logout-row">
-      <ion-col class="logout-col">
-        <div class="CSBTN">
-          <ion-button routerLink="../login">Cerrar sesión</ion-button>
-        </div>
-      </ion-col>
-    </ion-row>
-    
-  </ion-grid>
+  <ion-row class="logout-row">
+    <ion-col class="logout-col">
+      <div class="CSBTN">
+        <ion-button routerLink="../login">Cerrar sesión</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+                
 </ion-content>
-
 <ion-footer>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="inicio" routerLink="../inicio">
@@ -93,6 +103,11 @@
       <ion-label>Tareas</ion-label>
     </ion-tab-button>
 
+     <ion-tab-button tab="qr" routerLink="../qr">
+      <ion-icon name="qr-code-outline"></ion-icon>
+      <ion-label>QR</ion-label>
+    </ion-tab-button>
+
     <ion-tab-button tab="cuenta" routerLink="../cuenta">
       <ion-icon name="school-outline"></ion-icon>
       <ion-label>Cuenta</ion-label>
@@ -103,4 +118,4 @@
       <ion-label>Horario</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-</ion-footer> 
+</ion-footer>

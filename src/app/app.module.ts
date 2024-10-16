@@ -7,6 +7,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './components/footer/footer.component';
+import { FabButtonComponent } from './components/fab-button/fab-button.component';
 
 @NgModule({
   declarations: [AppComponent],
