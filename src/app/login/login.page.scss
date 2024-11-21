@@ -10,35 +10,33 @@ ion-text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-ion-input {
-    text-decoration: black;
-    color: black;
-    text-align: center;
-    padding: 50%;
-    border: solid;
-    font-size: 16px;
-    width: 75%;
-    height: 1%;
-    margin: auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-}
-
 ion-item {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    width: 80%;
+    --inner-padding-end: 0;
+    --inner-padding-start: 0;
+    --background: transparent;
+    margin: 10px auto;
+    width: 85%;
+    border-radius: 10px;
 }
 
 ion-label {
-    display: flex;
-    align-items: center;
-    width: 50%;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
 }
 
-#pp {
-    font-size: 40px;
+ion-input {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 8px;
+    color: #333;
+}
+
+ion-label img.icono {
+    width: 50px;
+    height: 50px;
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 .start {
@@ -50,37 +48,4 @@ ion-label {
 .invit {
     font-size: 15px;
     background: rgb(5, 110, 196);
-    align-items: end;
-}
-
-
-ion-label img {
-    width: 50px;
-    height: 50px;
-
-}
-
-#pop {
-    width: 20px;
-    height: 20px;
-
-}
-
-
-::placeholder {
-
-    font-size: 30px;
-}
-
-.nav-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-button-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
 }

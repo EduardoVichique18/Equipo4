@@ -1,32 +1,47 @@
 <ion-content [fullscreen]="true">
   <ion-img src="/assets/icon/upavmg.png"></ion-img>
   <ion-text>
-    <h1> <strong>Inicio de sesión</strong></h1>
+    <h1><strong>Inicio de sesión</strong></h1>
   </ion-text>
   <br>
   <br>
-  <ion-item>
 
-    <ion-label>
-      <img src="/assets/icon/email.png" alt="Imagen">
-    </ion-label>
-    <ion-input type="text" placeholder="Correo"></ion-input>
-  </ion-item>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <!-- Campo de correo -->
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <img src="/assets/icon/email.png" alt="Email" class="icono"> Correo
+      </ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+      <p *ngIf="loginForm.get('email')?.errors?.['required']">El correo es obligatorio.</p>
+      <p *ngIf="loginForm.get('email')?.errors?.['email']">Debe ser un correo válido.</p>
+    </ion-text>
 
-  <ion-item>
+    <!-- Campo de contraseña -->
+    <ion-item lines="none">
+      <ion-label position="floating">
+        <img src="/assets/icon/secc.png" alt="Password" class="icono"> Contraseña
+      </ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      <p *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</p>
+      <p *ngIf="loginForm.get('password')?.errors?.['minlength']">
+        La contraseña debe tener al menos 6 caracteres.
+      </p>
+    </ion-text>
 
-    <ion-label>
-      <img class="pop" src="/assets/icon/secc.png" alt="Imagen">
-    </ion-label>
-    <ion-input type="text" placeholder="Contraseña" hidden></ion-input>
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-label class="ion-text-start">
-      <ion-button color="ion-upav-color" class="invit" routerLink="../registro">Pre-registro</ion-button>
-    </ion-label>
-    <ion-label class="ion-text-end">
-      <ion-button color="ww" class="start" routerLink="../inicio">INICIAR</ion-button>
-    </ion-label>
-  </ion-item>
+    <br>
+    <!-- Botones -->
+    <ion-item lines="none">
+      <ion-label class="ion-text-start">
+        <ion-button color="ion-upav-color" class="invit" routerLink="../registro">Pre-registro</ion-button>
+      </ion-label>
+      <ion-label class="ion-text-end">
+        <ion-button type="submit" [disabled]="loginForm.invalid" color="ww" class="start">INICIAR</ion-button>
+      </ion-label>
+    </ion-item>
+  </form>
 </ion-content>
