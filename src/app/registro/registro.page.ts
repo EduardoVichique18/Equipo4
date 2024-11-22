@@ -6,13 +6,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
 })
-export class RegistroPage implements OnInit {
+export class RegistroPage  {
 
 
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

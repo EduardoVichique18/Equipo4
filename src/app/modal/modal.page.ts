@@ -1,39 +1,41 @@
 import { Component } from '@angular/core';
-import { ModalController, AlertController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.page.html',
+  styleUrls: ['./modal.page.scss'],
 })
 export class ModalPage {
   tituloTarea: string = '';
   nombreMateria: string = '';
-  fechaEntrega: string | null = null;
+  fechaEntrega: string = '';
 
   constructor(
     private modalController: ModalController,
-    private alertController: AlertController
-  ) { }
-
-  async agregarTarea() {
-    if (!this.tituloTarea || !this.nombreMateria || !this.fechaEntrega) {
-      const alert = await this.alertController.create({
-        header: 'Error',
-        message: 'Por favor, complete todos los campos.',
-        buttons: ['OK'],
-      });
-      await alert.present();
-      return;
-    }
-
-    this.modalController.dismiss({
-      titulo: this.tituloTarea,
-      materia: this.nombreMateria,
-      fecha: this.fechaEntrega,
-    });
-  }
+    private taskService: TaskService // Usa TaskService
+  ) {}
 
   cerrarModal() {
     this.modalController.dismiss();
+  }
+
+  agregarTarea() {
+    const nuevaTarea = {
+      titulo: this.tituloTarea,
+      materia: this.nombreMateria,
+      fecha: this.fechaEntrega,
+    };
+
+    this.taskService.createTask(nuevaTarea).subscribe(
+      (response) => {
+        // Devuelve la tarea creada y cierra el modal
+        this.modalController.dismiss(response);
+      },
+      (error) => {
+        console.error('Error al agregar la tarea:', error);
+      }
+    );
   }
 }
