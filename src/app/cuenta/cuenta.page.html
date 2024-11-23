@@ -1,94 +1,46 @@
-<ion-header>
-  <ion-grid>
-    <ion-row>
-      <!-- Primera columna para las imágenes -->
-      <ion-col size="4">
-        <ion-img src="assets/icon/post.png" style="width: 118px; height: 114px;"></ion-img>
-        <ion-img src="assets/icon/upavmg.png" style="width: 94px; height: 62px; margin: 10px 0;" class="t"></ion-img>
-      </ion-col>
+<ion-content>
+  <div class="student-card">
+    <img class="profile-picture" src="https://via.placeholder.com/150" alt="Foto de perfil" />
+    <div class="student-info">
+      <h3>Juan Pérez</h3>
+      <p class="id">Matrícula: 2023123456</p>
+      <p class="career">Ingeniería en Desarrollo de Software</p>
+    </div>
+    <div class="actions">
+      <ion-button expand="block" fill="solid" color="primary" (click)="toggleMaterias()">Ver Calificaciones</ion-button>
+      <ion-button expand="block" fill="outline" color="secondary">Enviar Mensaje</ion-button>
+    </div>
+  </div>
+</ion-content>
 
-      <!-- Segunda columna para los textos -->
-      <ion-col size="8">
-        <ion-text color="primary" style="font-size: 25px; font-weight: bold;">
-          PERFIL ALUMNO
-        </ion-text>
-        <ion-text color="medium" style="font-size: 20px; font-weight: bold; display: block; margin: 5px 0;">
-          Nombre_Alumno
-        </ion-text>
-        <ion-text color="medium" style="font-size: 20px; font-weight: bold; display: block; margin: 5px 0;">
-          Grado y Grupo: 1"A"
-        </ion-text>
-        <ion-text color="medium" style="font-size: 20px; font-weight: bold; display: block; margin: 5px 0;">
-          Carrera
-        </ion-text>
-        <ion-text color="medium" style="font-size: 20px; font-weight: bold; display: block; margin: 5px 0;">
-          Semestre: 1
-        </ion-text>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-header>
 
 <ion-content>
 
 
-  <ion-col size="6">
-    <div class="image-container">
-      <ion-button class="image-title" (click)="toggleMaterias()">Calificaciones</ion-button>
-    </div>
-  </ion-col>
-  
+ 
   <!-- Materias se mostrarán solo cuando showMaterias sea true -->
-  <ion-item *ngIf="showMaterias">
-    <h3 class="p">Materias</h3>
-    <h3>P1</h3>
-    <br>
-    <h3>P2</h3>
-    <h3>F</h3>
-  </ion-item>
-  <br>
-  <ion-item *ngIf="showMaterias">
-    <h3>Materia 1</h3>
-    <h3>0.0</h3>
-    <br>
-    <h3>0.0</h3>
-    <h3>0.0</h3>
-  </ion-item>
-  <br>
-  <!-- Repite lo mismo para los demás ion-items -->
-  <ion-item *ngIf="showMaterias">
-    <h3>Materia 3</h3>
-    <h3>0.0</h3>
-    <br>
-    <h3>0.0</h3>
-    <h3>0.0</h3>
-  </ion-item>
-  <br>
-  <!-- Sigue añadiendo el *ngIf en los demás ion-items -->
-  <ion-item *ngIf="showMaterias">
-    <h3>Materia 4</h3>
-    <h3>0.0</h3>
-    <br>
-    <h3>0.0</h3>
-    <h3>0.0</h3>
-  </ion-item>
-  <br>
-  <ion-item *ngIf="showMaterias">
-    <h3>Materia 5</h3>
-    <h3>0.0</h3>
-    <br>
-    <h3>0.0</h3>
-    <h3>0.0</h3>
-  </ion-item>
-  <br>
-
-  <ion-row class="logout-row">
-    <ion-col class="logout-col">
-      <div class="CSBTN">
-        <ion-button routerLink="../login">Cerrar sesión</ion-button>
+  <ion-content>
+    <div class="grades-container" *ngIf="showMaterias">
+      <!-- Encabezado -->
+      <div class="grades-header">
+        <span>Materias</span>
+        <span>P1</span>
+        <span>P2</span>
+        <span>F</span>
       </div>
-    </ion-col>
-  </ion-row>
+      
+      <!-- Materias con calificaciones -->
+      <div class="grades-item" *ngFor="let materia of listaMaterias">
+        <span>{{ materia.nombre }}</span>
+        <span>{{ materia.p1 }}</span>
+        <span>{{ materia.p2 }}</span>
+        <span>{{ materia.f }}</span>
+      </div>
+    </div>
+  </ion-content>
+  
+
+  
                 
 </ion-content>
 <ion-footer>

@@ -17,7 +17,9 @@
     <ion-text color="danger" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
       <p *ngIf="loginForm.get('email')?.errors?.['required']">El correo es obligatorio.</p>
       <p *ngIf="loginForm.get('email')?.errors?.['email']">Debe ser un correo válido.</p>
+      <p *ngIf="loginForm.get('email')?.errors?.['invalidDomain']">El correo debe pertenecer a un dominio válido (.com, .org, .net, .edu).</p>
     </ion-text>
+    
 
     <!-- Campo de contraseña -->
     <ion-item lines="none">
@@ -40,8 +42,16 @@
         <ion-button color="ion-upav-color" class="invit" routerLink="../registro">Pre-registro</ion-button>
       </ion-label>
       <ion-label class="ion-text-end">
-        <ion-button color="ww" class="start" routerLink="../inicio">Iniciar</ion-button>
+        <ion-button 
+        routerLink="../inicio"
+          color="ww" 
+          class="start" 
+          [disabled]="loginForm.invalid" 
+          type="submit">
+          Iniciar
+        </ion-button>
       </ion-label>
     </ion-item>
   </form>
+  
 </ion-content>

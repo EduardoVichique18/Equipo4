@@ -1,26 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Bienvenido</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="../login">
+        <ion-icon slot="icon-only" name="log-out-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
-  <ion-text>
-    <h1> <strong>BIENVENIDO</strong></h1>
-  </ion-text>
-  <ion-item class="p">
-    <ion-img src="/assets/icon/post.png" class="t"></ion-img>
-    <ion-label> <ion-img src="/assets/icon/post.png" class="t"></ion-img></ion-label>
-  </ion-item>
-  <br>
-  <ion-text>
-    <h1> <strong>TARJETA VIRTUAL</strong></h1>
-  </ion-text>
-  <ion-text>
-    <p class="l"><strong>Puedes consultar tu tarjeta de estudiante virtual oficial si la requieres </strong></p>
-  </ion-text>
-  <ion-item class="p">
-    <ion-img src="/assets/icon/credencial.png" class="o"></ion-img>
-  </ion-item>
+  <div class="banner">
+    <h2>¡Explora las funciones!</h2>
+    <p>Descubre todo lo que puedes hacer en la aplicación.</p>
+  </div>
 
-  <ion-item>
-    <ion-button routerLink="../api">Mapa</ion-button>
-  </ion-item>
+  <div class="card-section">
+    <ion-card class="feature-card" routerLink="../api">
+      <ion-icon class="icon" name="locate-outline"></ion-icon>
+      <ion-card-header>
+        <ion-card-title>Mi ubicación</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+       ¡No te pierdas al buscar la escuela!
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="feature-card">
+      <ion-icon class="icon" name="notifications-outline"></ion-icon>
+      <ion-card-header>
+        <ion-card-title>Noticias</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Consulta las noticias sobre la escuela
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
 
 <ion-footer>

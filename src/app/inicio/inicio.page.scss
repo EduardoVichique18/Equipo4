@@ -1,50 +1,56 @@
-.t {
-    width: 100px;
-    height: 100px;
-    margin: 12px;
-
-}
-
-.p {
-    width: 300px;
-    height: 150px;
-    margin: auto;
-    border: solid;
-    border-radius: 10px;
-    border-color: rgb(31, 4, 105);
-
-}
-
-h1 {
-    margin: 10px;
-
-}
-
-p {
-    margin: 10px;
-}
-
-.o {
-    width: 250px;
-    height: 150px;
-}
-
-.nav-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-button-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.banner {
     text-align: center;
-}
-
-ion-label {
-    font-size: 12px;
+    background: linear-gradient(45deg, #3b82f6, #9333ea);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .banner h2 {
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #0000ff;
-    /* Cambiar el color a azul */
-}
+    margin-bottom: 10px;
+  }
+  
+  .banner p {
+    font-size: 1rem;
+  }
+  
+  .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin: 16px;
+  }
+  
+  .feature-card {
+    flex: 1 1 calc(100% - 32px);
+    max-width: 300px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-card ion-card-header {
+    color: #3b82f6;
+  }
+  
+  .icon {
+    font-size: 40px;
+    color: #3b82f6;
+    margin-top: 16px;
+  }
+  
+  ion-footer ion-tab-bar {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  ion-footer ion-tab-button {
+    --color-selected: #3b82f6;
+  }
+  
