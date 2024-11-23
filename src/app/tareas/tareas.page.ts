@@ -34,12 +34,11 @@ export class TareasPage implements OnInit {
 
     modal.onDidDismiss().then((result) => {
       if (result.data) {
-        this.taskService.createTask(result.data).subscribe(() => {
-          this.cargarTareas();
-        });
+        // Simplemente recarga la lista de tareas
+        this.cargarTareas();
       }
     });
-
+    
     return await modal.present();
   }
   async confirmarEliminar(id: number) {
