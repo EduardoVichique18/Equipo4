@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Importar ambos módulos
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +14,9 @@ import { RegistroPage } from './registro.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroPageRoutingModule
+    RegistroPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [RegistroPage]
 })
-export class RegistroPageModule {}
+export class RegistroPageModule { }

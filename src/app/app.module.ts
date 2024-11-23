@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { FabButtonComponent } from './components/fab-button/fab-button.component';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(),   HttpClientModule, AppRoutingModule, ReactiveFormsModule ],
