@@ -1,108 +1,90 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" text="Regresar"></ion-back-button>
     </ion-buttons>
-
     <ion-buttons slot="end">
-      <ion-button routerLink="/datos-generales">Siguiente </ion-button>
+      <ion-button [disabled]="!personalForm.valid" routerLink="../datos-generales">Siguiente</ion-button>
     </ion-buttons>
-
-    <ion-title>
-      Información personal
-    </ion-title>
+    <ion-title>Información personal</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-  <ion-list>
-    <ion-row class="ion-justify-content-center">
-      <ion-col size="auto">
-        <!-- Imagen de la app -->
-        <ion-img src="assets/icon/upav_img1.JPG" class="app-image"></ion-img>
-      </ion-col>
-    </ion-row>
+  <form [formGroup]="personalForm">
+    <ion-list>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto">
+          <!-- Imagen de la app -->
+          <ion-img src="assets/icon/upav_img1.JPG" class="app-image"></ion-img>
+        </ion-col>
+      </ion-row>
 
+      <!-- Fecha de nacimiento -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="stacked">Fecha de nacimiento: </ion-label>
+            <ion-datetime formControlName="birthDate" [max]="maxDate" presentation="date"></ion-datetime>
+          </ion-item>
+          <ion-text color="danger"
+            *ngIf="personalForm.get('birthDate')?.invalid && personalForm.get('birthDate')?.touched">
+            La fecha de nacimiento es obligatoria.
+          </ion-text>
+        </ion-col>
+      </ion-row>
 
+      <!-- Sexo -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-text class="sexo">
+            <h3>Sexo</h3>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="stacked">Seleccionar</ion-label>
+            <ion-select formControlName="gender">
+              <ion-select-option value="masculino">Masculino</ion-select-option>
+              <ion-select-option value="femenino">Femenino</ion-select-option>
+              <ion-select-option value="otro">Otro</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-text color="danger" *ngIf="personalForm.get('gender')?.invalid && personalForm.get('gender')?.touched">
+            El sexo es obligatorio.
+          </ion-text>
+        </ion-col>
+      </ion-row>
 
-    <!-- Campos para información personal -->
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="floating">Edad</ion-label>
-          <ion-input type="text" maxlength="2"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+      <!-- Lugar de nacimiento -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Lugar de nacimiento</ion-label>
+            <ion-input formControlName="birthPlace" type="text"></ion-input>
+          </ion-item>
+          <ion-text color="danger"
+            *ngIf="personalForm.get('birthPlace')?.invalid && personalForm.get('birthPlace')?.touched">
+            El lugar de nacimiento es obligatorio.
+          </ion-text>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="stacked">Fecha de nacimiento: </ion-label>
-          <ion-datetime-button datetime="dateBtn"></ion-datetime-button>
-
-          <ion-popover [keepContentsMounted]="true" alignment="center" mode="ios" animated="false">
-            <ng-template>
-              <ion-datetime id="dateBtn" preferWheel="false" [showDefaultButtons]="true" [cancelText]="'Cancelar'"
-                [doneText]="'Aceptar'" presentation="date"></ion-datetime>
-            </ng-template>
-          </ion-popover>
-
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="floating">Lugar de nacimiento</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="floating">Escuela donde realizó estudios de bachillerato</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="floating">Lugar donde realizó estudios de bachillerato</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <!-- Sexo -->
-    <ion-row>
-      <ion-col size="12">
-        <ion-text class="sexo">
-          <h3>Sexo</h3>
-        </ion-text>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="stacked">Seleccionar</ion-label>
-          <ion-select>
-            <ion-select-option value="masculino">Masculino</ion-select-option>
-            <ion-select-option value="femenino">Femenino</ion-select-option>
-            <ion-select-option value="otro">Otro</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-
-  </ion-list>
+      <!-- Escuela donde realizó estudios de bachillerato -->
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Escuela donde realizó estudios de bachillerato</ion-label>
+            <ion-input formControlName="highSchool" type="text"></ion-input>
+          </ion-item>
+          <ion-text color="danger"
+            *ngIf="personalForm.get('highSchool')?.invalid && personalForm.get('highSchool')?.touched">
+            El nombre de la escuela es obligatorio.
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </form>
 </ion-content>

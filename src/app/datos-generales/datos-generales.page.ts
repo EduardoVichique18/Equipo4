@@ -8,33 +8,17 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./datos-generales.page.scss'],
 })
 export class DatosGeneralesPage implements OnInit {
-  /*constructor(private navCtrl: NavController) { }
+  formulario: FormGroup;
 
-  navigateToComponent() {
-    this.navCtrl.navigateRoot('../info-personal'); // Reemplaza con la ruta correcta
-  }*/
-
-
-
-
-
-   formulario: FormGroup;
-
-constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {
     this.formulario = this.fb.group({
-      nacionalidad: ['', Validators.required],
       estadoCivil: ['', Validators.required],
       colonia: ['', Validators.required],
-      municipio: ['', Validators.required],
-      celular: ['', [Validators.required, Validators.maxLength(10)]],
-      paisOrigen: ['', Validators.required],
-      ocupacion: ['', Validators.required],
-      codigoPostal: ['', [Validators.required, Validators.maxLength(5)]],
+      codigoPostal: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(5)]],
       localidad: ['', Validators.required],
-      estadoOrigen: ['', Validators.required],
       direccion: ['', Validators.required],
-      estado: ['', Validators.required],
-      telefonoCasa: ['', Validators.required],
+      celular: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      ocupacion: ['', Validators.required],
     });
   }
 
@@ -42,13 +26,10 @@ constructor(private fb: FormBuilder) {
 
   onSubmit() {
     if (this.formulario.valid) {
-      // Aquí puedes manejar la lógica de envío del formulario
       console.log('Formulario válido:', this.formulario.value);
     } else {
       console.log('Formulario inválido');
       this.formulario.markAllAsTouched(); // Marca todos los campos como tocados para mostrar los errores
     }
-
   }
-
 }

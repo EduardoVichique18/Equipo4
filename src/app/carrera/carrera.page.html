@@ -1,12 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" text="Regresar"></ion-back-button>
     </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button routerLink="/">Terminar </ion-button>
+      <ion-button routerLink="/">Terminar</ion-button>
     </ion-buttons>
 
     <ion-title>
@@ -19,15 +18,30 @@
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size="auto">
-
         <ion-img src="assets/icon/upav_img1.JPG" class="app-image"></ion-img>
       </ion-col>
     </ion-row>
 
-
-
-    <!-- Categoría: EDUCACIÓN -->
+    <!-- Selección de categoría -->
     <ion-row>
+      <ion-col size="12">
+        <ion-text>
+          <h3>Selecciona una categoría</h3>
+        </ion-text>
+        <ion-select [(ngModel)]="selectedCategory" placeholder="Seleccione una categoría"
+          (ionChange)="onCategoryChange($event)">
+          <ion-select-option value="educacion">Educación</ion-select-option>
+          <ion-select-option value="artesHumanidades">Artes y Humanidades</ion-select-option>
+          <ion-select-option value="cienciasAdministrativas">Ciencias Administrativas</ion-select-option>
+          <ion-select-option value="cienciasExactas">Ciencias Exactas e Ingeniería</ion-select-option>
+          <ion-select-option value="cienciasSociales">Ciencias Sociales</ion-select-option>
+          <ion-select-option value="cienciasAgropecuarias">Ciencias Agropecuarias y Veterinaria</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+
+    <!-- Mostrar opciones basadas en la categoría seleccionada -->
+    <ion-row *ngIf="selectedCategory === 'educacion'">
       <ion-col size="12">
         <ion-text>
           <h3>EDUCACIÓN:</h3>
@@ -40,8 +54,7 @@
       </ion-col>
     </ion-row>
 
-    <!-- Categoría: ARTES Y HUMANIDADES -->
-    <ion-row>
+    <ion-row *ngIf="selectedCategory === 'artesHumanidades'">
       <ion-col size="12">
         <ion-text>
           <h3>ARTES Y HUMANIDADES:</h3>
@@ -53,8 +66,7 @@
       </ion-col>
     </ion-row>
 
-    <!-- Categoría: CIENCIAS ADMINISTRATIVAS -->
-    <ion-row>
+    <ion-row *ngIf="selectedCategory === 'cienciasAdministrativas'">
       <ion-col size="12">
         <ion-text>
           <h3>CIENCIAS ADMINISTRATIVAS:</h3>
@@ -70,8 +82,7 @@
       </ion-col>
     </ion-row>
 
-    <!-- Categoría: CIENCIAS EXACTAS E INGENIERÍA -->
-    <ion-row>
+    <ion-row *ngIf="selectedCategory === 'cienciasExactas'">
       <ion-col size="12">
         <ion-text>
           <h3>CIENCIAS EXACTAS E INGENIERÍA:</h3>
@@ -86,8 +97,7 @@
       </ion-col>
     </ion-row>
 
-    <!-- Categoría: CIENCIAS SOCIALES -->
-    <ion-row>
+    <ion-row *ngIf="selectedCategory === 'cienciasSociales'">
       <ion-col size="12">
         <ion-text>
           <h3>CIENCIAS SOCIALES:</h3>
@@ -101,8 +111,7 @@
       </ion-col>
     </ion-row>
 
-    <!-- Categoría: CIENCIAS AGROPECUARIAS Y VETERINARIA -->
-    <ion-row>
+    <ion-row *ngIf="selectedCategory === 'cienciasAgropecuarias'">
       <ion-col size="12">
         <ion-text>
           <h3>CIENCIAS AGROPECUARIAS Y VETERINARIA:</h3>
@@ -112,7 +121,6 @@
         </ion-select>
       </ion-col>
     </ion-row>
-
 
   </ion-grid>
 </ion-content>

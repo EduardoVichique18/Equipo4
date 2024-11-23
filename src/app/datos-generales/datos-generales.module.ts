@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Importar ambos módulos
 import { DatosGeneralesPageRoutingModule } from './datos-generales-routing.module';
 
 import { DatosGeneralesPage } from './datos-generales.page';
@@ -13,8 +12,10 @@ import { DatosGeneralesPage } from './datos-generales.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DatosGeneralesPageRoutingModule
+    DatosGeneralesPageRoutingModule,
+    ReactiveFormsModule
+
   ],
   declarations: [DatosGeneralesPage]
 })
-export class DatosGeneralesPageModule {}
+export class DatosGeneralesPageModule { }
